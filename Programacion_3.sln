@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Programacion_3", "Programacion_3\Programacion_3.vcxproj", "{0F6D3EC9-6F1B-4397-B15D-C7747D4B41A1}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tarea1", "Tarea1\Tarea1.vcxproj", "{7B6B580C-44AD-4DE6-A9BF-88B7854456D2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ejemplo_Clases", "Ejemplo_Clases\Ejemplo_Clases.vcxproj", "{3D3A0F3D-24A2-4448-819B-85EEE8ACFCDF}"
@@ -17,14 +15,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0F6D3EC9-6F1B-4397-B15D-C7747D4B41A1}.Debug|x64.ActiveCfg = Debug|x64
-		{0F6D3EC9-6F1B-4397-B15D-C7747D4B41A1}.Debug|x64.Build.0 = Debug|x64
-		{0F6D3EC9-6F1B-4397-B15D-C7747D4B41A1}.Debug|x86.ActiveCfg = Debug|Win32
-		{0F6D3EC9-6F1B-4397-B15D-C7747D4B41A1}.Debug|x86.Build.0 = Debug|Win32
-		{0F6D3EC9-6F1B-4397-B15D-C7747D4B41A1}.Release|x64.ActiveCfg = Release|x64
-		{0F6D3EC9-6F1B-4397-B15D-C7747D4B41A1}.Release|x64.Build.0 = Release|x64
-		{0F6D3EC9-6F1B-4397-B15D-C7747D4B41A1}.Release|x86.ActiveCfg = Release|Win32
-		{0F6D3EC9-6F1B-4397-B15D-C7747D4B41A1}.Release|x86.Build.0 = Release|Win32
 		{7B6B580C-44AD-4DE6-A9BF-88B7854456D2}.Debug|x64.ActiveCfg = Debug|x64
 		{7B6B580C-44AD-4DE6-A9BF-88B7854456D2}.Debug|x64.Build.0 = Debug|x64
 		{7B6B580C-44AD-4DE6-A9BF-88B7854456D2}.Debug|x86.ActiveCfg = Debug|Win32

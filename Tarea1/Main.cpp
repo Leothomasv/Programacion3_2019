@@ -24,7 +24,7 @@ int main() {
 
 		switch (opcion)
 		{
-			//PALINDROMO
+			//PALINDROMO 
 		case 1:
 
 			cout << "PALINDROMO" << endl;
