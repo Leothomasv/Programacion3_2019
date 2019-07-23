@@ -31,14 +31,25 @@ int main() {
 			int numero;
 			cout << "Ingrese numero: ";
 			cin >> numero;
+			int auxiliar;
+			auxiliar = numero;
+
+			int resto, invertido;
+			invertido=0;
+			while (numero != 0) {
+				resto = numero % 10;
+				numero = numero / 10;
+				invertido = invertido * 10 + resto;
+			}
 			
-			if (esPalindromo(numero)) {
+			if (auxiliar == invertido) {
 				cout << "es Palindromo \n"; 
 			}
 			else {
 				cout << "No es Palindromo \n";
 			}
 			break;
+			
 
 			//NUMERO ELEVADO
 		case 2:
@@ -58,20 +69,20 @@ int main() {
 		case 3:
 
 			cout << "BINARIO A DECIMAL" << endl;
-			int exp, digito;
+			int exponente, digito;
 			double binario, decimal;
-			cout << "Introduce numero: ";
+			cout << "Introducir numero: ";
 			cin >> binario;
-			exp = 0;
+			exponente = 0;
 			decimal = 0;
 			while (((int)(binario / 10)) != 0)
 			{
 				digito = (int)binario % 10;
-				decimal = decimal + digito * pow(2.0, exp);
-				exp++;
+				decimal = decimal + digito * pow(2.0, exponente);
+				exponente++;
 				binario = (int)(binario / 10);
 			}
-			decimal = decimal + binario * pow(2.0, exp);
+			decimal = decimal + binario * pow(2.0, exponente);
 			cout << endl << "Decimal: " << decimal << endl;
 
 			break;
@@ -90,23 +101,23 @@ int main() {
 
 
 //Clases de palindromo
-int invertir(int n) {
-	int respuesta = 0;
-
-	while (n > 0) {
-		respuesta = respuesta + n % 10;
-		respuesta = respuesta + 10;
-		n = n / 10;
-	}
-	return printf ("RESPUESTA %d \n", respuesta/10);
-
-}
-
-bool esPalindromo(int n) {
-	if (n == invertir(n)) {
-		return true;
-	}
-	else {
-		return false;
-	}
-}
+//int invertir(int n) {
+//	int respuesta = 0;
+//
+//	while (n > 0) {
+//		respuesta = respuesta + n % 10;
+//		respuesta = respuesta + 10;
+//		n = n / 10;
+//	}
+//	return printf ("RESPUESTA %d \n", respuesta/10);
+//
+//}
+//
+//bool esPalindromo(int n) {
+//	if (n == invertir(n)) {
+//		return true;
+//	}
+//	else {
+//		return false;
+//	}
+//}
