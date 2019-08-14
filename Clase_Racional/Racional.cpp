@@ -72,54 +72,55 @@ void Racional::imprimir_flotante(void) {
 }
 
 
-Racional Racional::sumar(Racional fraccion)
-{
+Racional operator+(const Racional &lo, const Racional &ro) {
 	Racional resultado;
-
-	if (fraccion.denominador == this->denominador)
+	
+	if (lo.denominador == ro.denominador)
 	{
-		resultado.setNumerador(this->numerador + fraccion.numerador);
-		resultado.setDenominador(this->denominador);
+		resultado.setNumerador(lo.numerador + ro.numerador);
+		resultado.setDenominador(lo.denominador);
 	}
 	else
 	{
-		resultado.setNumerador((this->numerador * fraccion.denominador) + (fraccion.numerador * this->denominador));
-		resultado.setDenominador(this->denominador * fraccion.denominador);
+		resultado.setNumerador((lo.numerador * ro.denominador) + (ro.numerador * lo.denominador));
+		resultado.setDenominador(lo.denominador * ro.denominador);
 	}
 
 	return resultado;
+
 }
 
-Racional Racional::restar(Racional fraccion) {
+Racional operator-(const Racional &lo, const Racional &ro) {
 
 	Racional resultado;
+	
+		if (lo.denominador == ro.denominador)
+		{
+			resultado.setNumerador(lo.numerador - ro.numerador);
+			resultado.setDenominador(lo.denominador);
+		}
+		else
+		{
+			resultado.setNumerador((lo.numerador * ro.denominador) - (ro.numerador * lo.denominador));
+			resultado.setDenominador(lo.denominador * ro.denominador);
+		}
 
-	if (fraccion.denominador == this->denominador)
-	{
-		resultado.setNumerador(this->numerador - fraccion.numerador);
-		resultado.setDenominador(this->denominador);
-	}
-	else
-	{
-		resultado.setNumerador((this->numerador * fraccion.denominador) - (fraccion.numerador * this->denominador));
-		resultado.setDenominador(this->denominador * fraccion.denominador);
-	}
-
-	return resultado;
+		return resultado;
 }
 
-Racional Racional::multiplicar(Racional fraccion) {
+Racional operator*(const Racional &lo, const Racional &ro) {
 	Racional resultado;
-	resultado.setNumerador(this->numerador * fraccion.numerador);
-	resultado.setDenominador(this->denominador * fraccion.denominador);
+		resultado.setNumerador(lo.numerador * ro.numerador);
+		resultado.setDenominador(lo.denominador * ro.denominador);
 
-	return resultado;
+		
+		return resultado;
 }
 
-Racional Racional::dividir(Racional fraccion) {
+Racional operator/(const Racional &lo, const Racional& ro) {
 	Racional resultado;
-	resultado.setNumerador(this->numerador * fraccion.denominador);
-	resultado.setDenominador(this->denominador * fraccion.numerador);
-
-	return resultado;
+		resultado.setNumerador(lo.numerador * ro.denominador);
+		resultado.setDenominador(lo.denominador * ro.numerador);
+	
+		return resultado;
 }

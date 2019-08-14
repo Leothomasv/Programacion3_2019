@@ -2,29 +2,37 @@
 #include "Racional.h"
 #include <conio.h>
 
-using std::cout;
+using namespace std;
 
 int main() {
-	Racional fraccion1;
-	Racional fraccion2(7, 2);
-	Racional fraccion3(6, 9);
 
-	cout << "Fraccion 1: "; fraccion1.imprimir_flotante();
-	cout << "Fraccion 2: "; fraccion2.imprimir_flotante();
-	cout << "Fraccion 3: "; fraccion3.imprimir_flotante();
+	Racional r1(1, 5);
+	Racional r2(2, 5);
+	Racional r3(1, 2);
 
-	fraccion1 = fraccion2.sumar(fraccion3);
-	cout << "Fraccion 1: "; fraccion1.imprimir();
+	Racional r4;
 
-	fraccion1 = fraccion2.restar(fraccion3);
-	cout << "Fraccion 1: "; fraccion1.imprimir();
+	cout << "SUMA \n";
+	r4 = r1 + r2 + r3;
+	r4.imprimir();
+	cout << "\n";
+	
+	cout << "RESTA \n";
+	r4 = r1 - r2 ;
+	r4.imprimir();
+	cout << "\n";
 
-	fraccion1 = fraccion2.multiplicar(fraccion3);
-	cout << "Fraccion 1: "; fraccion1.imprimir();
+	cout << "MULTIPLICACION \n";
+	r4 = r1 * r2;
+	r4.imprimir();
+	cout << "\n";
+	
+	cout << "DIVIDIR \n";
+	r4 = r1 / r2;
+	r4.imprimir();
+	cout << "\n";
 
-	fraccion1 = fraccion2.dividir(fraccion3);
-	cout << "Fraccion 1: "; fraccion1.imprimir();
-
+	
 
 	_getch();
 

@@ -1,0 +1,7 @@
+﻿  Main.cpp
+  Person.cpp
+c:\users\leoth\source\repos\programacion_3\ejemplo_claseivanderas\person.cpp(16): error C2084: function 'void Person::setId(std::string)' already has a body
+  c:\users\leoth\source\repos\programacion_3\ejemplo_claseivanderas\person.cpp(8): note: see previous definition of 'setId'
+c:\users\leoth\source\repos\programacion_3\ejemplo_claseivanderas\person.cpp(24): error C2084: function 'void Person::setId(std::string)' already has a body
+  c:\users\leoth\source\repos\programacion_3\ejemplo_claseivanderas\person.cpp(16): note: see previous definition of 'setId'
+  Generating Code...
