@@ -1,0 +1,11 @@
+﻿  Main.cpp
+c:\users\leoth\source\repos\programacion_3\asteroids_proyecto\main.cpp(114): error C2027: use of undefined type 'NAVE'
+  c:\users\leoth\source\repos\programacion_3\asteroids_proyecto\main.cpp(90): note: see declaration of 'NAVE'
+c:\users\leoth\source\repos\programacion_3\asteroids_proyecto\main.cpp(116): error C2027: use of undefined type 'NAVE'
+  c:\users\leoth\source\repos\programacion_3\asteroids_proyecto\main.cpp(90): note: see declaration of 'NAVE'
+c:\users\leoth\source\repos\programacion_3\asteroids_proyecto\main.cpp(117): error C2027: use of undefined type 'NAVE'
+  c:\users\leoth\source\repos\programacion_3\asteroids_proyecto\main.cpp(90): note: see declaration of 'NAVE'
+c:\users\leoth\source\repos\programacion_3\asteroids_proyecto\main.cpp(118): error C2027: use of undefined type 'NAVE'
+  c:\users\leoth\source\repos\programacion_3\asteroids_proyecto\main.cpp(90): note: see declaration of 'NAVE'
+c:\users\leoth\source\repos\programacion_3\asteroids_proyecto\main.cpp(119): error C2027: use of undefined type 'NAVE'
+  c:\users\leoth\source\repos\programacion_3\asteroids_proyecto\main.cpp(90): note: see declaration of 'NAVE'
