@@ -8,7 +8,7 @@ using namespace std;
 
 class Cadena {
 
-	friend Cadena operator + (Cadena&, Cadena&);
+	friend Cadena operator + (const Cadena& x);
 	friend ostream& operator << (ostream& x, const Cadena & y);
 
 private:
@@ -16,10 +16,12 @@ private:
 	char * cadena;
 
 public:
-	Cadena(char*);
+	Cadena(const char*);
 	Cadena(void);
 	Cadena(Cadena &x);
 
+	Cadena substr(int pos, int length);
+	int strcmp(const Cadena& x);
 
 };
 
