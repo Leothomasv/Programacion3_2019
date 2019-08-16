@@ -20,12 +20,20 @@ Cadena::Cadena(void) {
 
 Cadena operator +(Cadena&x, Cadena&y) {
 
+	Cadena suma;
+
+	suma.cadena(x.cadena + y.cadena);
+
+	return suma;
+
 }
 
 ostream& operator << (ostream&x, const Cadena &y) {
 	x << y.cadena;
 	return x;
 }
+
+
 
 
 

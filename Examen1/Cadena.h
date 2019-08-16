@@ -16,7 +16,7 @@ private:
 	char * cadena;
 
 public:
-	Cadena(char* x);
+	Cadena(char*);
 	Cadena(void);
 	Cadena(Cadena &x);
 

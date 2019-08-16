@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-	Cadena c0 ("Hola");
+	Cadena c0 ("Hola Mundo");
 	Cadena c1;
 	Cadena c2(c0);
 	Cadena c3 ("Mundo");
