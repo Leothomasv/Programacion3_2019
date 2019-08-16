@@ -1,38 +1,31 @@
 #include "Cadena.h"
 #include <iostream>
 
-
-Cadena::Cadena(char * c1) {
-	cadena = new char[strlen(c1)]; //RESERVANDO ESPACIO EN MEMORIA
-	strcpy(cadena, c1); // copiar los bytes 
-}
-
-Cadena::Cadena(Cadena &x) {
-	this->cadena = x.cadena;
-	this->SizeCadena = x.SizeCadena;
-
-}
+using namespace std;
 
 Cadena::Cadena(void) {
 	cadena = new char[1];
 	strcpy(cadena, " ");
 }
 
-Cadena operator +(Cadena&x, Cadena&y) {
 
-	Cadena suma;
+int Cadena::strCmp(const Cadena& x) {
+	for (int i = 0; i < SizeCadena; i++)
 
-	suma.cadena(x.cadena + y.cadena);
-
-	return suma;
-
+	{
+		if (cadena[i] != x.cadena[i]) {
+			if (cadena[i] < x.cadena[i]) {
+				return -1;
+			}
+			else if (cadena[i] > x.cadena[i]) {
+				return 1;
+			}
+		}
+		else if (cadena[i] == x.cadena[i && i == SizeCadena - 1]) {
+			return 0;
+		}
+	}
 }
-
-ostream& operator << (ostream&x, const Cadena &y) {
-	x << y.cadena;
-	return x;
-}
-
 
 
 
