@@ -24,6 +24,6 @@ int main() {
 	cout << "c4: " << c4 << endl;
 
 	Cadena c5 = c4.substr(4, 5);
-	cout "c5: " << c5;
+	cout << "c5: " << c5;
 
 }
