@@ -14,7 +14,7 @@ private:
 
 public:
 	ListaEnlazada(void);
-44	void agregar(int);
+	void agregar(int);
 	void insertar(int, int);
 	void imprimir(void);
 
