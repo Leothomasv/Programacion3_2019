@@ -10,7 +10,7 @@ int main() {
 	//Ingresar Datos
 	nodo *Lista = ListaEnlazada::AgregarNombres(5);//<- ESE NUMERO ES LA CANTIDAD DE NOMBRES QUE SE VAN A INSERTAR
 	cout << "\n";
-	cout << "<<<<IMPRESION DE LISTA ENLAZDA>>>>> \n";
+	cout << "<<<<IMPRESION DE LISTA ENLAZADA>>>>> \n";
 	ListaEnlazada::imprimir(&Lista);
 	cout << "\n";
 
