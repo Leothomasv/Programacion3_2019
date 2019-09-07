@@ -25,10 +25,8 @@ int main() {
 	}
 
 
-	//eliminar
-	/*char* nombre1 = new char;
-	strcpy(nombre, "Leonel");
-	ListaEnlazada::eliminar(&Lista, nombre1);*/
+
+	//Eliminar 
 
 	ListaEnlazada::eliminar(&Lista, (char*)"Leonel");
 
