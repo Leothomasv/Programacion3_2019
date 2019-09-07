@@ -46,8 +46,9 @@ void ListaEnlazada::imprimir(nodo ** lista) {
 		return;
 	}
 	else {
-		nodo *actual = new nodo();
+		nodo *actual = new nodo;
 		actual = *lista;
+	
 		while (actual != 0) {
 			cout <<"["<< actual->name << "] ";
 			actual = actual->siguiente;
@@ -65,25 +66,45 @@ bool ListaEnlazada::buscar(nodo** lista, char* nombre) {
 		}
 		auxilar = auxilar->siguiente;
 	}
+
+	//buscar(&(auxilar)->siguiente, nombre);
+	
 }
 
 void ListaEnlazada::eliminar(nodo** lista, char* nombre) {
 	
-	nodo* auxilar = *lista;
-	
-	if (*lista == 0) {
-		return;//esta vacia
-	}
-	else if (nombre == (*lista)->name) {
-		(*lista)->siguiente->anterior = (*lista)->anterior;
-		(*lista)->anterior->siguiente = (*lista)->siguiente;
-
-		delete *lista;
+	if (buscar(&(*lista), nombre) == 0)
+	{
 		return;
 	}
-	else {
-		eliminar(&(*lista)->siguiente, nombre);
-	}
 
+	nodo* actual = *lista;
+
+
+	while (actual != 0)
+	{
+		if (strcmp(actual->name, nombre) == 0)
+		{
+			if (actual == *lista)
+			{
+				*lista = actual->siguiente;
+				delete actual;
+				return;
+			}
+			else if (actual->siguiente == NULL)
+			{
+					actual->anterior->siguiente = NULL;
+					delete actual;
+					return;
+			}
+			else {
+				actual->anterior->siguiente = actual->siguiente;
+				actual->siguiente->anterior = actual->anterior;
+				delete actual;
+				return;
+			}
+		}
+		actual = actual->siguiente;
+	}
 }
 

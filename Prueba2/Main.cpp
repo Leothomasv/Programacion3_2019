@@ -18,19 +18,22 @@ int main() {
 	char* nombre = new char;
 	strcpy(nombre, "Leonel");
 	if (ListaEnlazada::buscar(&Lista, nombre)) {
-		cout << "\n [Dato encontrado] ";
+		cout << "\n [Dato encontrado] \n";
 	}
 	else {
-		cout << "\n [Dato No Encontrado] ";
+		cout << "\n [Dato No Encontrado] \n";
 	}
 
 
-	char* nombre1 = new char;
+	//eliminar
+	/*char* nombre1 = new char;
 	strcpy(nombre, "Leonel");
-	ListaEnlazada::eliminar(&Lista, nombre1);
+	ListaEnlazada::eliminar(&Lista, nombre1);*/
+
+	ListaEnlazada::eliminar(&Lista, (char*)"Leonel");
 
 	cout << "\n";
-	cout << "NUEVA LISTA ";
+	cout << "NUEVA LISTA= ";
 	ListaEnlazada::imprimir(&Lista);
 
 	_getch();
