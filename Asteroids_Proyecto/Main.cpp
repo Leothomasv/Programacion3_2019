@@ -16,6 +16,7 @@ using namespace std;
 #define ABAJO 80
 
 
+
 void gotoxy(int x, int y)
 {
 	HANDLE hCon;
@@ -25,7 +26,6 @@ void gotoxy(int x, int y)
 	dwPos.Y = y;
 	SetConsoleCursorPosition(hCon, dwPos);
 }//void gotoxy
-
 
 void OcultarCursor()
 {
@@ -37,8 +37,6 @@ void OcultarCursor()
 	SetConsoleCursorInfo(hCon, &cci);
 
 }//void ocultarcursor
-
-
 
 void pintar_limites()
 {
@@ -68,7 +66,7 @@ void pintar_limites()
 
 }//void pintar_limites
 
-
+//NAVE
 class NAVE
 {
 private:
@@ -110,7 +108,6 @@ public:
 
 };//clase nave
 
-
 void NAVE::pintar()
 {
 	gotoxy(x + 2, y);
@@ -122,8 +119,6 @@ void NAVE::pintar()
 
 }//void nave pintar
 
-
-
 void NAVE::borrar()
 {
 	gotoxy(x, y);
@@ -134,8 +129,6 @@ void NAVE::borrar()
 	printf("     ");
 
 }//void nave borrar
-
-
 
 void NAVE::mover()
 {
@@ -170,8 +163,6 @@ void NAVE::pintar_salud()
 
 }//void nave pintar_salud
 
-
-
 void NAVE::morir()
 {
 	if (salud == 0)
@@ -202,7 +193,7 @@ void NAVE::morir()
 }//void nave morir
 
 
-
+//ASTEROIDE
 class ASTEROIDE
 {
 	int x, y;
@@ -232,8 +223,6 @@ void ASTEROIDE::pintar()
 	printf("%c", 64);
 }//void asteroide::pintar
 
-
-
 void ASTEROIDE::mover()
 {
 	gotoxy(x, y);
@@ -260,6 +249,7 @@ void ASTEROIDE::colision(class NAVE &N)
 	}//if
 }//void ASTEROIDE::colision
 
+//BALA
 class BALA
 {
 private:
@@ -283,7 +273,6 @@ public:
 	bool fuera();
 };//class bala
 
-
 void BALA::mover()
 {
 	gotoxy(x, y);
@@ -292,7 +281,6 @@ void BALA::mover()
 	gotoxy(x, y);
 	printf("%c", 186);
 }//void bala::mover
-
 
 bool BALA::fuera()
 {
@@ -304,11 +292,16 @@ bool BALA::fuera()
 
 int main()
 {
+	
 	SetConsoleTitle("ASTEROIDS");
-	char opc;
-	cout << "DESEAS INICIAR EL JUEGO 1[SI] 0[NO] \n";
-	cin >> opc;
-	if (opc == '1')
+	int opcion;
+	
+	//MENU
+	
+
+
+	
+	if (opcion == 1)
 	{
 		char repetir = '1';
 		while (repetir == '1')
@@ -402,27 +395,16 @@ int main()
 			}//while(gameover)
 
 			system("cls");
-
 			cout << "deseas repetir el juego 1[si] 0[no]\n";
-
 			cin >> repetir;
-
 		}//while(repetir)
 
-
-
 		system("cls");
-
 		cout << "pulsa una tecla para salir";
-
 	}//if general
 
-
-
 	else
-
-		if (opc == '0')
-
+		if (opcion == 0)
 			cout << "pulsa una tecla para salir";
 
 	_getch();
