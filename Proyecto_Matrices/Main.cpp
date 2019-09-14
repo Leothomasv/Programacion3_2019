@@ -14,7 +14,7 @@ int main() {
 		cout << "Opcion?: ";
 		cin >> opcion;
 
-		if (opcion == 1)
+		if (opcion == 1)//SUMA DE MATRICES
 		{
 			cout << "Ingrese archivo de la matriz 1" << endl;
 			string n1;
@@ -29,7 +29,10 @@ int main() {
 			matriz m2 = leerMatriz(n2);
 
 			matriz m = sumarMatrices(m1, m2);
+			cout << "\n RESPUESTA:\n";
+			cout << ("==================================") << endl;
 			m.dibujarMatriz();
+			cout << ("==================================") << endl;
 
 			cout << "Ingrese 1 si desea guardar la matriz en un archivo, ingrese 2 si quiere omitir este paso" << endl;
 			cin >> opcion;
@@ -37,7 +40,7 @@ int main() {
 
 
 		}
-		else if (opcion == 2)
+		else if (opcion == 2)//RESTA DE MATRICES
 		{
 			cout << "Ingrese archivo de la matriz 1" << endl;
 			string n1;
@@ -52,7 +55,10 @@ int main() {
 			matriz m2 = leerMatriz(n2);
 
 			matriz m = restarMatrices(m1, m2);
+			cout << "\n RESPUESTA:\n";
+			cout << ("==================================") << endl;
 			m.dibujarMatriz();
+			cout << ("==================================") << endl;
 
 			cin.clear();
 			cout << "Ingrese 1 si desea guardar la matriz en un archivo, ingrese 2 si quiere omitir este paso" << endl;
@@ -60,9 +66,9 @@ int main() {
 			ElegirSiGuarda(opcion, m);
 
 		}
-		else if (opcion == 3)
+		else if (opcion == 3)//MULTIPLICACION DE MATRICES
 		{
-			cout << "EIngrese archivo de la matriz 1" << endl;
+			cout << "Ingrese archivo de la matriz 1" << endl;
 			string n1;
 			cin.clear();
 			cin.ignore();
@@ -75,13 +81,17 @@ int main() {
 			matriz m2 = leerMatriz(n2);
 
 			matriz m = multiplicarMatrices(m1, m2);
+			cout << "\n RESPUESTA:\n";
+			cout << ("==================================") << endl;
 			m.dibujarMatriz();
+			cout << ("==================================") << endl;
+
 
 			cout << "Ingrese 1 si desea guardar la matriz en un archivo, ingrese 2 si quiere omitir este paso" << endl;
 			cin >> opcion;
 			ElegirSiGuarda(opcion, m);
 		}
-		else if (opcion == 4)
+		else if (opcion == 4)//DETERMINANTE
 		{
 			cout << "Ingrese archivo de la matriz 1" << endl;
 			string n1;
@@ -92,7 +102,9 @@ int main() {
 			matriz m1 = leerMatriz(n1);
 
 			int det = GetMatrixDeterminant(m1);
+			cout << ("==================================") << endl;
 			cout << "Determinante: " << det << endl;
+			cout << ("==================================") << endl;
 			system("pause");
 		}
 		else if (opcion == 5)

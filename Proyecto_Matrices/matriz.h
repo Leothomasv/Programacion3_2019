@@ -1,6 +1,7 @@
 #pragma once
 #ifndef MATRIZ_H
 #define MATRIZ_H
+
 #include "nodo.h"
 #include <iostream>
 #include<fstream>
@@ -54,8 +55,7 @@ public:
 //operaciones
 matriz leerMatriz(string fileName);
 void guardarMatriz(string filename, matriz m);
-matriz sumarMatrices(matriz 
-	1, matriz m2);
+matriz sumarMatrices(matriz m1, matriz m2);
 matriz restarMatrices(matriz m1, matriz m2);
 matriz multiplicarMatrices(matriz m1, matriz m2);
 matriz getCofactor(matriz m, int p, int q);

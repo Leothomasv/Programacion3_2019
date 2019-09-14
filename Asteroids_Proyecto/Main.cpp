@@ -15,7 +15,12 @@ using namespace std;
 #define DERECHA 77
 #define ABAJO 80
 
+int puntos = 0;
+//Estadisticas
+int puntaje[10][2];
 
+//color
+HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
 void gotoxy(int x, int y)
 {
@@ -288,27 +293,56 @@ bool BALA::fuera()
 	return false;
 }//bool bala::fuera
 
+//STATS
+
+void AgregarEstadisticas() {
+	for (int i = 0; i < 10; i++) {
+		if (puntaje[i][1] == 0) {
+			puntaje[i][0] = i + 1;
+			puntaje[i][1] = puntos;
+			break;
+		}
+	}
+}
+
+void ImpStats() {
+	for (int i = 0; i < 10; i++) {
+		gotoxy(67, 10 + i); printf("Juego: %d            %d\n", puntaje[i][0], puntaje[i][1]);
+	}
+}
+
+void Estadisticas() {
+	gotoxy(70, 5); printf("___ESTADISTICAS___");
+
+
+}
+
 
 
 int main()
 {
 	
 	SetConsoleTitle("ASTEROIDS");
-	int opcion;
-	
+	char opcion;
 	//MENU
-	
+	do {
+		system("cls");
+		gotoxy(65, 10); printf("_____A S T E R O I D S_____");
 
+		gotoxy(72, 15); printf("1. JUGAR");
+		gotoxy(72, 17); printf("2. ESTADISTICAS");
+		gotoxy(72, 19); printf("3. SALIR");
+		cout << "\n";
 
-	
-	if (opcion == 1)
-	{
-		char repetir = '1';
-		while (repetir == '1')
+		gotoxy(72, 21); printf("INGRESE OPCION: ");
+		cin >> opcion;
+
+		if (opcion == '1')
 		{
 			system("cls");
 			OcultarCursor();
 			pintar_limites();
+
 			NAVE N(35, 29, 3, 3);
 			N.pintar();
 			N.pintar_salud();
@@ -317,18 +351,18 @@ int main()
 
 			for (int i = 0; i < 5; i++)
 			{
-				A.push_back(new ASTEROIDE(rand() % 75 + 3, rand() % 5 + 4));
+				A.push_back(new ASTEROIDE(rand() % 75 + 3, rand() % 5 + 4));//crea un nuevo asteroid
 			}//for
 			list<BALA*>B;
 			list<BALA*>::iterator it;
-			
-			int puntos = 0;
+
+			//int puntos = 0;
 			bool game_over = false;
 			while (!game_over)
 			{
-				
+
 				gotoxy(1, 1);
-				printf("MUEVES LA NAVE CON LAS FLECHAS Y DISPARAS CON 'A'");
+				printf("MUEVES LA NAVE CON LAS FLECHAS Y DISPARAS CON 'X'");
 				gotoxy(4, 2);
 				printf("PUNTOS %d", puntos);
 				if (_kbhit())
@@ -393,21 +427,27 @@ int main()
 				Sleep(30);
 
 			}//while(gameover)
-
 			system("cls");
-			cout << "deseas repetir el juego 1[si] 0[no]\n";
-			cin >> repetir;
-		}//while(repetir)
+			AgregarEstadisticas();
+			puntos = 0;
+			gotoxy(65, 10); printf("<PRESIONE ENTER PARA VOLVER AL MENU>");
+			
 
-		system("cls");
-		cout << "pulsa una tecla para salir";
-	}//if general
+		}
+		else if(opcion == '2'){
+			system("cls");
+			gotoxy(130, 5); printf("<<<Presione ENTER para salir>>>");
+			Estadisticas();
+			ImpStats();
 
-	else
-		if (opcion == 0)
-			cout << "pulsa una tecla para salir";
+		}
+		else if (opcion == '3') {
+			system("cls");
+			gotoxy(70, 10); cout << ("GAME OVER");
+		}
+		_getch();
 
-	_getch();
+	}while (opcion != '3');//el whle que hace funcionar el main
 
 }//int main()
 

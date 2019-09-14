@@ -198,7 +198,7 @@ matriz leerMatriz(string fileName)
 {
 	ifstream ifile(fileName);
 
-	if (!ifile.good())
+	if (!ifile)//cambio 
 	{
 		cout << "FATAL ERROR!! No se pudo abrir el archivo" << endl;
 		return matriz();
@@ -208,8 +208,8 @@ matriz leerMatriz(string fileName)
 
 	string line;
 	getline(ifile, line);
-	stringstream ss(line);
-
+	stringstream ss(line); // el sstream permite la lectura de un string como si se estuviera usando el cin >> 
+	                       //esto hace que cuente de la cantidad de numeros y cree las columnas necesarias
 	while (!ss.eof())
 	{
 		int n;
@@ -404,15 +404,15 @@ int GetMatrixDeterminant(matriz m)
 
 			return (res - res2);
 		}
-		else
+		else // mas de 4x4
 		{
 			int res = 0;
-			int sign = 1;
+			int signo = 1;
 			for (int i = 0; i < m.rows; i++)
 			{
 				matriz temp = getCofactor(m, 0, i);
-				res += (sign*m.getValorPosicionEspecifica(0, i)*GetMatrixDeterminant(temp));
-				sign = -1 * sign;
+				res += (signo*m.getValorPosicionEspecifica(0, i)*GetMatrixDeterminant(temp));
+				signo = -1 * signo;
 			}
 			return res;
 		}
