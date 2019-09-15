@@ -85,13 +85,56 @@ void guardarAArchivo(nodo** lista) {
 	else {
 		nodo *actual = new nodo;
 		actual = *lista;
-
+		
 		while (actual != 0) {
-			fileNombres << "[" << actual->name << "] ";
+			fileNombres << actual->name << " ";
 			actual = actual->siguiente;
 		}
 	}
 	fileNombres.close();
 
-
 }
+
+void cargarDesdeArchivo(nodo** lista) {
+
+	ifstream fileNombres("nombres.txt", ios::in);
+
+	if (!fileNombres) {
+		cout << "Error en lectura de archivo";
+		return;
+	}
+	char nombre[30];
+	while (fileNombres >> nombre) {
+
+		cout << "\n {Nombre: " << nombre << "}";
+
+	}
+	cout << "\n";
+
+	fileNombres.close();
+}
+
+void BuscarElemento(const char* name)
+{
+	ifstream fileNombres("nombres.txt", ios::in);
+
+	if (!fileNombres) {
+		cout << "Error en lectura de archivo";
+		return;
+	}
+	char nombre[30];
+	while (fileNombres >> nombre) {
+
+		if (strcmp(nombre, name) == 0) {
+			fileNombres.close();
+			cout << "\n {Nombre encontrado: " << nombre << "}";
+			cout << "\n";
+		}
+	}
+	cout << "Nombre no encontrado..." << endl;
+	cout << "\n";
+
+	fileNombres.close();
+}
+
+

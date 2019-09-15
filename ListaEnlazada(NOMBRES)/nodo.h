@@ -21,7 +21,8 @@ void insertarAlFinal(nodo**, const char*);//inserta un nodo al final de la lista
 void ordenar(nodo**); //ordena la lista basado en el nombre haciendo uso del algoritmo de ordenacion burbuja
 void checkSort(nodo**);
 void guardarAArchivo(nodo**);
-void cargarDesdeArchivo(nodo**, const char*);
+void cargarDesdeArchivo(nodo**);
+void BuscarElemento(const char*);
 void imprimir(nodo**);
 
 
