@@ -15,8 +15,9 @@ using namespace std;
 #define DERECHA 77
 #define ABAJO 80
 
-int puntos = 0;
+
 //Estadisticas
+int puntos = 0;
 int puntaje[10][2];
 
 //color
@@ -321,7 +322,6 @@ void Estadisticas() {
 
 int main()
 {
-	
 	SetConsoleTitle("ASTEROIDS");
 	char opcion;
 	//MENU
@@ -346,6 +346,7 @@ int main()
 			NAVE N(35, 29, 3, 3);
 			N.pintar();
 			N.pintar_salud();
+
 			list<ASTEROIDE*>A;
 			list<ASTEROIDE*>::iterator itA;
 

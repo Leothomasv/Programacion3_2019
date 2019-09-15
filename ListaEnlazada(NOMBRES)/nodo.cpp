@@ -70,7 +70,28 @@ void imprimir(nodo ** lista) {
 	}
 }
 
-void ordenar(nodo** lista) {
+void guardarAArchivo(nodo** lista) {
+
+	ofstream fileNombres("nombres.txt", ios::app);
+
+	if (!fileNombres) {
+		cout << "error de apertura en archivo" << endl;
+		return;
+	}
+
+	if (*lista == 0) {
+		return;
+	}
+	else {
+		nodo *actual = new nodo;
+		actual = *lista;
+
+		while (actual != 0) {
+			fileNombres << "[" << actual->name << "] ";
+			actual = actual->siguiente;
+		}
+	}
+	fileNombres.close();
 
 
 }

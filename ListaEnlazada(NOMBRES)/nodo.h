@@ -1,7 +1,7 @@
 #pragma once
 #ifndef Nodo_h
 #define Nodo_h
-
+#include <fstream>
 
 
 struct nodo {
@@ -20,8 +20,8 @@ void insertarAlInicio(nodo**, const char*);//inserta un nodo al inicio de la lis
 void insertarAlFinal(nodo**, const char*);//inserta un nodo al final de la lista
 void ordenar(nodo**); //ordena la lista basado en el nombre haciendo uso del algoritmo de ordenacion burbuja
 void checkSort(nodo**);
-void guardarAArchivo(nodo**, char*);
-void cargarDesdeArchivo(nodo**, char*);
+void guardarAArchivo(nodo**);
+void cargarDesdeArchivo(nodo**, const char*);
 void imprimir(nodo**);
 
 

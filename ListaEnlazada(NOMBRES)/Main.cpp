@@ -10,6 +10,8 @@ int main() {
 
 	imprimir(&inicio);
 
+	guardarAArchivo(&inicio);//listo
+
 	_getch();
 
 }
