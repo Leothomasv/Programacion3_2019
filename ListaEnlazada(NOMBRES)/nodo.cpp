@@ -131,9 +131,6 @@ void BuscarElemento(const char* name)
 			cout << "\n";
 		}
 	}
-	cout << "Nombre no encontrado..." << endl;
-	cout << "\n";
-
 	fileNombres.close();
 }
 
