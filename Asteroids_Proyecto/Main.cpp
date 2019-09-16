@@ -322,7 +322,7 @@ void Estadisticas() {
 
 int main()
 {
-	SetConsoleTitle("ASTEROIDS");
+	SetConsoleTitle("<<ASTEROIDS>>");
 	char opcion;
 	//MENU
 	do {
@@ -363,7 +363,7 @@ int main()
 			{
 
 				gotoxy(1, 1);
-				printf("MUEVES LA NAVE CON LAS FLECHAS Y DISPARAS CON 'X'");
+				printf("MUEVE LA NAVE CON LAS FLECHAS Y DISPARAS CON 'X'");
 				gotoxy(4, 2);
 				printf("PUNTOS %d", puntos);
 				if (_kbhit())
@@ -371,6 +371,12 @@ int main()
 					char tecla = _getch();
 					if (tecla == 'x' || tecla == 'X')
 						B.push_back(new BALA(N.X() + 2, N.Y() - 1));
+					else if (tecla == 'p' || tecla == 'P') {
+						gotoxy(65, 10);  printf("Pause");
+						Sleep(100000);
+
+					}
+						
 				}//if
 
 

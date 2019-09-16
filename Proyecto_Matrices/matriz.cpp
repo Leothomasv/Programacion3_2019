@@ -182,9 +182,9 @@ void matriz::moverCursorInicio()
 	cursor = inicio;
 }
 
-int matriz::getValorPosicionEspecifica(int r, int c)
+int matriz::getValorPosicionEspecifica(int row, int col)
 {
-	if (moverCursor(r, c))
+	if (moverCursor(row, col))
 	{
 		return getValor();
 	}
